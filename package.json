@@ -1,0 +1,13 @@
+{
+  "name": "sdu-job-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "山东大学求职助手网页，提供 AI 咨询、近期求职动态和官方渠道入口。",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

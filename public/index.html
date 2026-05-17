@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>山东大学求职助手</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <section class="hero nav-hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">AI 求职助手 · 山大学子专属</p>
+          <h1 id="page-title">把岗位搜索、简历优化、面试准备放进一个求职工作台</h1>
+          <p class="hero-text">
+            接入“山东大学求职助手”Agent，聚合学校就业信息、官方渠道和常用求职入口，适合校招检索、简历打磨、面试演练和职业规划。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#agent">开始咨询</a>
+            <a class="ghost-link" href="https://www.job.sdu.edu.cn/" target="_blank" rel="noreferrer">山东大学就业信息网</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="求职助手能力概览">
+          <div class="metric">
+            <span>8</span>
+            <small>协同技能</small>
+          </div>
+          <div class="metric">
+            <span>AI</span>
+            <small>智能协同</small>
+          </div>
+          <button class="metric metric-toggle" type="button" id="agentModeToggle" aria-pressed="false" title="切换 Agent 版本">
+            <span>高性能</span>
+            <small>智能调度</small>
+          </button>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="workspace" id="agent">
+        <div class="chat-shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Agent Console</p>
+              <h2>山大求职助手</h2>
+            </div>
+            <span class="status" id="agentStatus">连接中</span>
+          </div>
+
+          <div class="quick-prompts" aria-label="快捷提问">
+            <button type="button" data-prompt="帮我找济南或青岛的数据分析实习，要求适合山东大学本科生，并列出投递建议。">岗位推荐</button>
+            <button type="button" data-prompt="请按STAR法则优化这段项目经历：负责校园二手交易平台的后端接口开发。">简历优化</button>
+            <button type="button" data-prompt="我准备面试 Java 后端开发岗，请给我一轮模拟面试并逐题点评。">模拟面试</button>
+            <button type="button" data-prompt="计算机专业研二学生想进国企数字化岗位，请规划接下来三个月的准备路线。">职业规划</button>
+          </div>
+
+          <div class="messages" id="messages" aria-live="polite">
+            <article class="message assistant">
+              <div class="avatar">AI</div>
+              <div class="bubble">
+                你好，我是山东大学求职助手。可以帮你搜岗位、改简历、拆解JD、准备面试，也能把学校就业渠道里的信息整理成行动清单。
+              </div>
+            </article>
+          </div>
+
+          <form class="composer" id="chatForm">
+            <textarea id="messageInput" rows="2" placeholder="输入你的求职问题，例如：帮我分析这份岗位JD是否适合投递"></textarea>
+            <button type="submit" id="sendButton">发送</button>
+          </form>
+        </div>
+
+        <aside class="skills-panel" aria-labelledby="skills-title">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">AI Skills</p>
+              <h2 id="skills-title">能力矩阵</h2>
+            </div>
+          </div>
+          <div class="skill-list" id="skillList"></div>
+        </aside>
+      </section>
+
+      <section class="news-section" id="news">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Career News</p>
+            <h2>近期求职动态</h2>
+          </div>
+          <a class="section-link" href="https://www.job.sdu.edu.cn/xwgg/tzgg1.htm" target="_blank" rel="noreferrer">更多通知</a>
+        </div>
+        <div class="news-grid" id="newsGrid"></div>
+      </section>
+
+      <section class="links-section" id="links">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Official Links</p>
+            <h2>官方渠道与常用入口</h2>
+          </div>
+        </div>
+        <div class="link-groups" id="linkGroups"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>山东大学求职助手网页</span>
+      <span>面向山大学子的智能求职工作台</span>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
